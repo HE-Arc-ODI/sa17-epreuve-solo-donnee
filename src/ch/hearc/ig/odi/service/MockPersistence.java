@@ -23,6 +23,7 @@ public class MockPersistence {
   public static final String CSV_FILE_PATH = "../csv/openquizzdb_fr.csv";
   private Map<Long, Question> questions;
   private List<Player> players;
+  private int playerCount = 0;
 
 
   /**
@@ -32,9 +33,9 @@ public class MockPersistence {
     this.questions = new HashMap();
     this.players = new ArrayList();
 
-    this.players.add(new Player("Alice"));
-    this.players.add(new Player("Bob"));
-    this.players.add(new Player("Claude"));
+    this.players.add(new Player("Alice", Long.valueOf(playerCount++)));
+    this.players.add(new Player("Bob", Long.valueOf(playerCount++)));
+    this.players.add(new Player("Claude",  Long.valueOf(playerCount++)));
 
     Reader csvReader = null;
 

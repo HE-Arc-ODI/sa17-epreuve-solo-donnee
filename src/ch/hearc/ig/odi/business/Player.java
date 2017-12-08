@@ -9,11 +9,6 @@ import java.util.Map;
 public class Player implements Serializable {
 
     /**
-    * Compteur pour la gestion de l'id de la réponse
-    */
-    private Long nextId = (long)0;
-    
-    /**
      * Id du joueur
      */
     private Long id;
@@ -29,9 +24,8 @@ public class Player implements Serializable {
      * Constructeur de la classe Player
      * @param alias représente l'alias du joueur pour la session
      */
-    public Player(String alias) {
-        nextId ++;
-        id = this.nextId;
+    public Player(String alias, Long id) {
+        this.id = id;
         this.alias = alias;
         games = new HashMap();
     }
